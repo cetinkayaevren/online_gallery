@@ -19,6 +19,8 @@ from io import BytesIO
 import glob
 
 
+
+conn = psycopg2.connect(host = "localhost", database="gallery_system", user = "postgres", password = "12bizimkiler34")
 ABSOLUTE_PATH = os.path.abspath('./uploaded_files')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp'}
 count = 0
