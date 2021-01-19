@@ -22,6 +22,8 @@ import glob
 ABSOLUTE_PATH = os.path.abspath('./uploaded_files')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp'}
 count = 0
+app = Flask(__name__)
+
 
 
 def connect_to_db():
