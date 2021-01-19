@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+
+<section class="hero is-fullheight is-primary">
+<div class="hero-body">
+  <div class="container has-text-centered">
+    <h1 class="title" style="font-size: 50px;">
+      ONLINE SELL AND RENTAL <br>AUTO GALLERY SYSTEM
+    </h1>
+    <h2 class="subtitle">
+      <i>See and Explore</i>
+    </h2>
+  </div>
+</div>
+</section>
+
+
+<nav class="level is-mobile" style="padding-top:2%;margin-bottom:0px;padding-bottom:2%;background-color: white">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Seller</p>
+      <p class="title">10</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Customer</p>
+      <p class="title">25</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Sell Cars</p>
+      <p class="title">32</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Rent Cars</p>
+      <p class="title">12</p>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-medium is-info is-bold ">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Welcome to the Auto Gallery !
+      </h1>
+      <h2 class="subtitle">
+        The gallery provides you to explore the various of cars in every part of your country.<br>
+        Look at the cars and select some of them. Select the most suitable car. <br>Talk to seller for buying or renting.
+        Dont't worry, there is a security place to bargain :)
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-medium is-success is-bold ">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title" style="text-align: end;">
+        Sell or Rent Your Cars
+      </h1>
+      <h2 class="subtitle" style="text-align: end;">
+        Even if you are individual or gallery seller, you can sell or rent cars in this platform !<br>
+        Add your car informations and start to sell. That's all you have to do ! Customers <br>every part of the country 
+        will see your ad and they will contact with you. <br> Register as Standard or Premium Seller account and enjoy !
+
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class ="banner-image">
+  <img class ="my-img" src={{ url_for('static', filename='car1.jpg') }} alt="Cair Image">
+  <h1 class = "banner-text">ARE YOU READY ?</h1>
+  <p class = "banner-text banner-text-second">Before starting, don't forget to register.<br>Guests cannot buy/rent or sell their cars...</p>
+</section>
+{% endblock %}

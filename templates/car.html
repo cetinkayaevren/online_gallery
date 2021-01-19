@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Car{% endblock %}
+{% block content %}
+
+<h1 class="title is-2" style="text-align: center;">{{my_car[0][8]}}</h1>
+
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-half">
+        <div class="notification is-primary has-text-centered">
+          <p><b>Brand: </b> {{my_car[0][0]}}</p><br>
+          <p><b>Model: </b> {{my_car[0][1]}}</p><br>
+          <p><b>Year: </b> {{my_car[0][2]}}</p><br>
+          <p><b>Fuel Type: </b> {{my_car[0][3]}}</p><br>
+          <p><b>KM: </b> {{my_car[0][4]}}</p><br>
+          <p><b>Sell/Rent: </b> {% if my_car[0][7] == True %} Sell {% else %} Rent {% endif %}</p><br>
+        </div>
+
+      </div>
+      <div class="column is-one-quarter ">
+        <p class="notification is-primary">
+          <img src="{{url_for('download_file', filename=image_name)}}" alt="Araç resmi">
+        </p>      
+      </figure>
+
+      </div>
+      <div class="column is-one-quarter">
+        <p class="notification is-primary" style="text-align: center;"> <a href="{{url_for('seller_page', key_id = car_key,seller_key = my_car[0][16])}}"><b>{{my_car[0][12]}} {{my_car[0][13]}}</b></a><br>
+          <b>Province:</b>  {{my_car[0][10]}} <br>
+          <b>Telephone:</b>  {{my_car[0][14]}} <br>
+          <u><b>Reliability Ratio:</b></u>  {{my_car[0][15]}}
+          {% if my_car[0][15] > 6.5 %}
+          <span class="icon has-text-success">
+            <i class="fas fa-check-square"></i>
+          </span>
+          {% else %}
+          <span class="icon has-text-warning">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+          {% endif %}
+          <br>
+          </p>      
+      </div>
+
+      <div class="column is-one-quarter">
+      </div>
+      <div class="column is-half">
+        <p class="notification is-primary"><b>{{my_car[0][9]}}</b></p>      
+      </div>
+      <div class="column is-one-quarter">
+      </div>
+
+    </div>
+
+{% endblock %}

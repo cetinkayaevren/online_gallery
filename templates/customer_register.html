@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}  Register {% endblock %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block content %}
+<h3 class="title has-text-grey" style="text-align: center; margin-top: 30px;">Register</h3>
+
+<form method="POST" action="">
+
+        <div class="form-group">
+                {{render_field(form.name, class_="input", style="max-width:30%;margin-left:35%;text-align:center;",placeholder="e.g Alex")}}
+        </div>
+        
+        <div class="field">
+            <div class="control">
+                {{render_field(form.surname, class_="input", style="max-width:30%;margin-left:35%;text-align:center;",placeholder="e.g Smith")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.email, class_="input",style="max-width:30%;margin-left:35%;text-align:center;" ,placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.password, class_="input",style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.confirm, class_="input", style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.citizen_id, class_="input", style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.customer_age, class_="input", style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.customer_province, class_="input", style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                {{render_field(form.customer_telephone, class_="input", style="max-width:30%;margin-left:35%;text-align:center",placeholder="e.g user@user.com")}}
+        </div>
+        </div>
+
+        
+        <p><input type="submit" class="button is-block is-info is-large is-fullwidth" value="Register" style="max-width: 15%;margin-left:42.5%;margin-bottom: 5%;margin-top:2.5%"></input></p>
+    </form>
+{% endblock %}

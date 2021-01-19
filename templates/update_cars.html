@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block title %}  Register {% endblock %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block content %}
+<h3 class="title has-text-grey" style="text-align: center; margin-top: 30px;">Update Account</h3>
+
+<form method="POST" action="">
+    
+    <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">Fuel Type</label>
+            </label>
+            <input type="text" class ="input" name = "fueltype" placeholder="Enter the Fuel Type Of Your Car" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New KM</label>
+            </label>
+            <input type="number" class ="input" name = "km" placeholder="Change the title of the text" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New Price</label>
+            </label>
+            <input type="number" class ="input" name = "price" placeholder="Change the price of your Car" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+            <label class="label" style="text-align: center;">Change Sell - Rent</label>
+                <div class="buttons" >
+                    <select name="sell_rent" id="" class="button is-normal" style="max-width:30%;margin-left:44.75%;text-align:center">
+                        <option value="2">Choose Sell-Rent</option>
+                        <option value="0">Sell</option>
+                        <option value="1">Rent</option>
+                    </select>
+                </div>
+        </div>
+    </div>
+
+    <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">Change Title</label>
+            </label>
+            <input type="title" class ="input" name = "title" placeholder="Please Enter km Taken by Car" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">Change Text of Your Car</label>
+            </label>
+            <textarea name ="text_write" placeholder="Please Enter Some Text About Your Car"></textarea>
+        </div>
+      </div>
+    
+        <p><input type="submit" class="button is-block is-info is-large is-fullwidth" value="Update Your Car" style="max-width: 20%;margin-left:40%;margin-bottom: 5%;margin-top:2.5%"></input></p>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Log in Type{% endblock %}
+{% block content %}
+<h3 class="title has-text-grey" style="text-align: center; margin-top: 30px;">Choose Log in Type</h3>
+<div class="columns" style="margin-top: 10% ;margin-bottom: 10%;">
+
+    <div class="column is-one-quarter"></div>
+    <div class="column is-one-quarter">
+        <div class="notification is-primary">
+            <div class="buttons">
+                <button class="button is-primary" style="margin-left: 25%;"><a href="{{url_for('login_customer_page')}}">Log in as Customer</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="notification is-primary">            
+            <div class="buttons">
+            <button class="button is-primary" style="margin-left: 25%;"><a href="{{url_for('login_seller_page')}}">Log in as Seller</a></button>
+          </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter"></div>
+</div>
+
+{% endblock %}

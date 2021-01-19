@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}  Register {% endblock %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block content %}
+<h3 class="title has-text-grey" style="text-align: center; margin-top: 30px;">Update Account</h3>
+
+<form method="POST" action="">
+    
+    <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New E - Mail</label>
+            </label>
+            <input type="text" class ="input" name = "email" placeholder="Please Enter New E mail address" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New Age</label>
+            </label>
+            <input type="number" class ="input" name = "age" placeholder="Please Enter New Age" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New Province</label>
+            </label>
+            <input type="text" class ="input" name = "province" placeholder="Please Enter Province" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>
+
+      <div class="field" style="margin-left:30%;margin-right:30%;">
+        <div class="control">
+            <label class="label" style="text-align:center;">
+                <label for="text">New Telephone (without 0)</label>
+            </label>
+            <input type="text" class ="input" name = "telephone" placeholder="Please Enter Telephone (without 0)" style="max-width:50%;margin-left:25%;text-align:center;">
+        </div>
+      </div>    
+    
+        <p><input type="submit" class="button is-block is-info is-large is-fullwidth" value="Update Informations" style="max-width: 20%;margin-left:40%;margin-bottom: 5%;margin-top:2.5%"></input></p>
+    </form>
+{% endblock %}

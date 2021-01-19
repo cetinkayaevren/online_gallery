@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Gallery - {% block title %}{% endblock %}</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>-->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'my_styles.css')}}">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='mymovies.css') }}">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+
+
+  <header>
+  <section class="hero is-info is-medium">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <img src="{{url_for('static', filename='logo.png')}}" alt="Logo">
+            </a>
+            <span class="navbar-burger" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="{{ url_for('home_page') }}">
+                Home
+              </a>
+              {% if session.logged_in %}
+              <a class="navbar-item" href="{{ url_for('cars_page') }}">
+                List Cars
+              </a>
+              <a class="navbar-item" href="{{ url_for('view_profile') }}">
+                View Profile
+              </a>
+              {% endif %}
+              {% if session['logged_as'] == 'seller' %}
+              <a class="navbar-item" href="{{ url_for('add_car') }}">
+                Add Car
+              </a>
+              {% endif %}
+
+              {% if session.logged_in %}
+              <a class="navbar-item" href="{{ url_for('logout_page') }}">Log out</a>
+              {% else %}
+              <a class="navbar-item" href="{{ url_for('login_entry') }}" >
+                Log in
+              </a>
+              <a class="navbar-item" href="{{ url_for('register_entry') }}" >
+                Register
+              </a>
+              {% endif %}
+              <!--
+              <span class="navbar-item">
+                <a class="button is-primary is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span style="color:black;">See codes</span>
+                </a>
+              </span>
+              -->
+              <span class="navbar-item">
+                <a href="https://github.com/cetinkayaevren">              
+                  <button class="button">
+                  <span class="icon">
+                    <i class="fab fa-github">
+                      <img src="{{ url_for('static', filename='github.png') }}" alt="Github Logo"></i>
+                  </span>
+                  <span>GitHub</span>
+                </button></a>
+
+            </span>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+</header>
+
+
+<!--
+<header>
+        <nav class="navbar" aria-label="main navigation">
+          <div class="navbar-brand">
+            <span class="navbar-item">
+              <a class="button is-link" href="{{ url_for('home_page') }}">Home</a>
+            </span>
+            <span class="navbar-item">
+              <a class="button is-link" href="{{ url_for('cars_page') }}">List movies</a>
+            </span>
+            {% if current_user.is_admin %}
+            <span class="navbar-item">
+              <a class="button is-link" href="{{ url_for('movie_add_page') }}">Add movie</a>
+            </span>
+            {% endif %}
+            <span class="navbar-item">
+              {% if not current_user.is_authenticated %}
+                <a class="button is-link" href="{{ url_for('login_customer_page') }}" >Log in</a>
+              {% else %}
+                {{ current_user.username }}
+                <a class="button is-link" href="{{ url_for('logout_page') }}">Log out</a>
+              {% endif %}
+          </div>
+        </nav>
+        
+      </header>
+-->
+
+
+    <main>
+      {% for message in get_flashed_messages() %}
+
+      <div class="notification is-info is-light" style="margin-bottom:0px;">
+        {{ message }}
+      </div>
+      {% endfor %}
+            {% block content %}{% endblock %}
+      </main>
+
+
+
+    <footer class="footer">
+        <div class="content">
+          <div class="container has-text-centered">
+            <small>&copy; 2017-2022, Evren Çetinkaya</small>
+          </div>
+        </div>
+    </footer>
+
+</body>
+</html>

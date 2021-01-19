@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}  Choose Registration{% endblock %}
+{% block content %}
+<h3 class="title has-text-grey" style="text-align: center; margin-top: 30px;">Choose Registration Type</h3>
+<div class="columns" style="margin-top: 10% ;margin-bottom: 10%;">
+
+    <div class="column is-one-quarter"></div>
+    <div class="column is-one-quarter">
+        <div class="notification is-primary">
+            <div class="buttons">
+                <button class="button is-primary" style="margin-left: 25%;"><a href="{{url_for('customer_register_page')}}">Customer Account</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="notification is-primary">            
+            <div class="buttons">
+            <button class="button is-primary" style="margin-left: 25%;"><a href="{{url_for('seller_register_page')}}">Seller Account</a></button>
+          </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter"></div>
+</div>
+
+{% endblock %}
