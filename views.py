@@ -34,12 +34,7 @@ app = Flask(__name__)
 
 def connect_to_db():
     try:
-        return psycopg2.connect(
-            host = "localhost",
-            database="gallery_system",
-            user = "postgres",
-            password = "12bizimkiler34"
-        )
+        return psycopg2.connect(DATABASE_URL, sslmode='require')
     except:
         print("Cannot connect to the database !")
 
