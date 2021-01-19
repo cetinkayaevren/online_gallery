@@ -3,9 +3,17 @@ from flask_login import LoginManager
 from datetime import datetime
 import views
 from dbinit import create_database
+import psycopg2
 
 from user import get_user
 import os
+
+#os.environ['DATABASE_URL'] = 'postgres://postgres:12bizimkiler34@localhost:8080/gallery_system'
+#DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(host = "localhost",database="gallery_system",user = "postgres",password = "12bizimkiler34", sslmode='allow')
+
+#DATABASE_URL = os.environ['DATABASE_URL']
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 lm = LoginManager()
