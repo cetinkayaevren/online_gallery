@@ -7,7 +7,6 @@ from dbinit import create_database
 from user import get_user
 import os
 
-app = Flask(__name__)
 
 lm = LoginManager()
 @lm.user_loader
@@ -15,9 +14,10 @@ def load_user(user_id):
     return get_user(user_id)
 
 
-def create_app(app):
-    app.config.from_object("settings")
+def create_app():
 
+    app = Flask(__name__)
+    app.config.from_object("settings")
     app.add_url_rule("/", view_func=views.home_page)
     app.add_url_rule("/cars", view_func=views.cars_page, methods=["GET", "POST"])
     app.add_url_rule("/cars/<int:car_key>", view_func=views.car_page)
@@ -48,6 +48,6 @@ def create_app(app):
 
 
 if __name__ == "__main__":
-    app= create_app(app)
+    app= create_app()
     app.secret_key = 'secret123123'
     app.run(host = "0.0.0.0", port = 8080, debug = True)
