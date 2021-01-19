@@ -7,7 +7,6 @@ from dbinit import create_database
 from user import get_user
 import os
 
-
 app = Flask(__name__)
 
 lm = LoginManager()
@@ -48,6 +47,7 @@ def create_app(app):
     return app
 
 
-app= create_app(app)
-app.secret_key = 'secret123123'
-app.run(host = "0.0.0.0", port = 8080, debug = True)
+if __name__ == "__main__":
+    app= create_app(app)
+    app.secret_key = 'secret123123'
+    app.run(host = "0.0.0.0", port = 8080, debug = True)
