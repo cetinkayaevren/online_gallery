@@ -8,6 +8,7 @@ from user import get_user
 import os
 
 
+app = Flask(__name__)
 
 lm = LoginManager()
 @lm.user_loader
@@ -15,8 +16,7 @@ def load_user(user_id):
     return get_user(user_id)
 
 
-def create_app():
-    app = Flask(__name__)
+def create_app(app):
     app.config.from_object("settings")
 
     app.add_url_rule("/", view_func=views.home_page)
@@ -48,7 +48,6 @@ def create_app():
     return app
 
 
-if __name__ == "__main__":
-    app= create_app()
-    app.secret_key = 'secret123123'
-    app.run(host = "0.0.0.0", port = 8080, debug = True)
+app= create_app(app)
+app.secret_key = 'secret123123'
+app.run(host = "0.0.0.0", port = 8080, debug = True)
