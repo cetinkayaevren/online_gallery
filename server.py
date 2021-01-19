@@ -10,9 +10,9 @@ import os
 
 
 
-#os.environ['DATABASE_URL'] = 'postgres://postgres:12bizimkiler34@localhost:8080/gallery_system'
-#DATABASE_URL = os.environ['DATABASE_URL']
-#conn = psycopg2.connect(DATABASE_URL, sslmode='allow')
+os.environ['DATABASE_URL'] = 'postgres://phnwhvksewajsz:a90858a6b71e057c3c557b5b4f9cc7c2b12f2e0b78bc81f1082a587fe92c49a0@ec2-54-76-215-139.eu-west-1.compute.amazonaws.com:5432/d7labpo9324rt8'
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 #DATABASE_URL = os.environ['DATABASE_URL']
 #conn = psycopg2.connect(DATABASE_URL, sslmode='require')

@@ -21,6 +21,10 @@ import glob
 
 
 #conn = psycopg2.connect(host = "localhost", database="gallery_system", user = "postgres", password = "12bizimkiler34")
+os.environ['DATABASE_URL'] = 'postgres://phnwhvksewajsz:a90858a6b71e057c3c557b5b4f9cc7c2b12f2e0b78bc81f1082a587fe92c49a0@ec2-54-76-215-139.eu-west-1.compute.amazonaws.com:5432/d7labpo9324rt8'
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 ABSOLUTE_PATH = os.path.abspath('./uploaded_files')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp'}
 count = 0
